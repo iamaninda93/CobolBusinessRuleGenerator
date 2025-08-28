@@ -15,7 +15,7 @@ def extract_business_rules(structured_logic):
     """
     Uses Gemini to extract business rules from structured COBOL logic.
     """
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-2.0-flash")
     
     prompt = (
             "Extract business rules from the following structured COBOL logic. "
@@ -26,5 +26,6 @@ def extract_business_rules(structured_logic):
 
     response = model.generate_content(prompt)
     return response.text.split("\n")
+
 
 
