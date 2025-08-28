@@ -15,6 +15,14 @@ def convert_to_structured_format(cobol_code):
     Uses Gemini to convert COBOL code into structured format (e.g., JSON or pseudo-code).
     """
     model = genai.GenerativeModel("gemini-1.5-flash")
-    prompt = f"Convert the following COBOL business logic into structured format (JSON or pseudo-code):\n\n{cobol_code}"
+    prompt = (
+        "Convert the following COBOL business logic into a structured format such as JSON or pseudo-code. "
+        "Do not include any annotations or explanations:
+
+"
+        + cobol_code
+    )
+
     response = model.generate_content(prompt)
     return response.text
+
