@@ -28,7 +28,7 @@ def validate_rules(rules):
         "Review the following business rules written in simple English. "
         "Ensure they are clear, complete, and consistent. "
         "Rewrite them if needed, but do not include any annotations or explanations: "
-        + "".join(rules)
+        + "\n".join(rules)
     )
 
     response = model.generate_content(prompt)
@@ -41,6 +41,7 @@ def validate_rules(rules):
        # "If needed, rewrite them in clearer language:\n\n"
         #+ "\n".join(rules)
    # )
+
 
 
 
