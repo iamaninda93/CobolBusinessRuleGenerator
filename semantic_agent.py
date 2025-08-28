@@ -17,12 +17,11 @@ def convert_to_structured_format(cobol_code):
     model = genai.GenerativeModel("gemini-1.5-flash")
     prompt = (
         "Convert the following COBOL business logic into a structured format such as JSON or pseudo-code. "
-        "Do not include any annotations or explanations:
-
-"
+        "Do not include any annotations or explanations: "
         + cobol_code
     )
 
     response = model.generate_content(prompt)
     return response.text
+
 
