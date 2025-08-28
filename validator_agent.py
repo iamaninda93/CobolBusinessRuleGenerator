@@ -26,9 +26,12 @@ def validate_rules(rules):
     model = genai.GenerativeModel("gemini-1.5-flash")
     prompt = (
         "Review the following business rules written in simple English. "
-        "Check for clarity, completeness, and consistency. "
-        "If needed, rewrite them in clearer language:\n\n"
-        + "\n".join(rules)
+        "Ensure they are clear, complete, and consistent. "
+        "Rewrite them if needed, but do not include any annotations or explanations:
+
+"
+        + "
+".join(rules)
     )
 
     response = model.generate_content(prompt)
@@ -41,3 +44,4 @@ def validate_rules(rules):
        # "If needed, rewrite them in clearer language:\n\n"
         #+ "\n".join(rules)
    # )
+
