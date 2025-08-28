@@ -23,7 +23,7 @@ def validate_rules(rules):
     Returns:
         list: Validated rules or feedback from Gemini.
     """
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-2.0-flash")
     prompt = (
         "Review the following business rules written in simple English. "
         "Ensure they are clear, complete, and consistent. "
@@ -41,6 +41,7 @@ def validate_rules(rules):
        # "If needed, rewrite them in clearer language:\n\n"
         #+ "\n".join(rules)
    # )
+
 
 
 
