@@ -20,12 +20,11 @@ def extract_business_rules(structured_logic):
     prompt = (
             "Extract business rules from the following structured COBOL logic. "
             "Please write the rules in simple, clear English that a business analyst can understand:\n\n"
-        "Do not include any annotations or explanations:
-
-"
+        "Do not include any annotations or explanations: "
             + structured_logic
     )
 
     response = model.generate_content(prompt)
     return response.text.split("\n")
+
 
